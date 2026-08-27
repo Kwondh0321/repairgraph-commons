@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "repairgraph-commons"
+version = "0.1.0"
+description = "Open, validated symptom-cause-part-repair knowledge graph tools"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Kwondh0321" }]
+keywords = ["repair", "right-to-repair", "knowledge-graph", "diagnostics", "open-data"]
+
+[project.scripts]
+repairgraph = "repairgraph.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+

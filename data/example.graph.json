@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "license": "CC-BY-4.0",
+  "nodes": [
+    {"id": "device:laptop", "type": "device", "label": "generic laptop"},
+    {"id": "symptom:no-charge", "type": "symptom", "label": "battery does not charge", "aliases": ["not charging", "충전 안됨"], "tags": ["power", "battery"]},
+    {"id": "cause:damaged-cable", "type": "cause", "label": "damaged charging cable"},
+    {"id": "part:charger", "type": "part", "label": "compatible charger"},
+    {"id": "procedure:test-charger", "type": "procedure", "label": "test with a known-good compatible charger", "source": "https://www.ifixit.com/"},
+    {"id": "safety:power", "type": "safety", "label": "Disconnect power before inspecting damaged connectors."}
+  ],
+  "edges": [
+    {"id": "e1", "from": "device:laptop", "to": "symptom:no-charge", "type": "has_symptom"},
+    {"id": "e2", "from": "symptom:no-charge", "to": "cause:damaged-cable", "type": "indicates", "confidence": 0.65},
+    {"id": "e3", "from": "cause:damaged-cable", "to": "part:charger", "type": "requires_part"},
+    {"id": "e4", "from": "cause:damaged-cable", "to": "procedure:test-charger", "type": "resolved_by"},
+    {"id": "e5", "from": "cause:damaged-cable", "to": "safety:power", "type": "has_safety_note"}
+  ]
+}
+
