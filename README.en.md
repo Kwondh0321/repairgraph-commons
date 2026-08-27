@@ -1,6 +1,6 @@
 # RepairGraph Commons
 
-[한국어](README.md) | English
+[한국어](README.md) | English | [Changelog / 변경 기록](CHANGELOG.md)
 
 RepairGraph Commons defines an open symptom–cause–part–procedure knowledge-graph format with validation and deterministic search tools.
 

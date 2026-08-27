@@ -1,6 +1,6 @@
 # RepairGraph Commons
 
-한국어 | [English](README.en.md)
+한국어 | [English](README.en.md) | [변경 기록 / Changelog](CHANGELOG.md)
 
 RepairGraph Commons는 증상–원인–부품–수리 절차를 연결하는 공개 지식 그래프 형식과 검증·검색 도구입니다. 코드는 재사용 가능하게 분리하고 예제 그래프 데이터는 공개 라이선스로 제공합니다.
 
