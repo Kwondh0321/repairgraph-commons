@@ -11,7 +11,7 @@ from .core import diagnose, load_graph, validate_graph
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description="Validate and query open repair knowledge graphs.")
+    parser = argparse.ArgumentParser(description="공개 수리 지식 그래프를 검증하고 검색합니다.")
     subparsers = parser.add_subparsers(dest="command", required=True)
     validate = subparsers.add_parser("validate")
     validate.add_argument("graph", type=Path)
@@ -36,4 +36,3 @@ def main(argv: list[str] | None = None) -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

@@ -1,25 +1,22 @@
 # RepairGraph Commons
 
-RepairGraph Commons defines and validates an open symptom–cause–part–procedure knowledge graph, then provides a deterministic query engine for repair tools. The repository separates reusable code from openly licensed graph data.
+RepairGraph Commons는 증상–원인–부품–수리 절차를 연결하는 공개 지식 그래프 형식과 검증·검색 도구입니다. 코드는 재사용 가능하게 분리하고 예제 그래프 데이터는 공개 라이선스로 제공합니다.
 
-## Run
+## 설치 및 사용
 
 ```bash
 python -m pip install -e .
 repairgraph validate data/example.graph.json
-repairgraph query data/example.graph.json "laptop not charging"
+repairgraph query data/example.graph.json "노트북 충전 안됨"
 ```
 
-## Graph model
+노드 유형은 `device`, `symptom`, `cause`, `part`, `procedure`, `safety`이며, 절차 노드는 반드시 출처를 포함해야 합니다. 검증기는 중복 ID, 없는 노드 참조, 지원하지 않는 유형, 잘못된 신뢰도, 출처 없는 절차를 거부합니다.
 
-Node types: `device`, `symptom`, `cause`, `part`, `procedure`, `safety`.
+진단 순위는 공개 그래프 관계를 바탕으로 한 제안일 뿐 전문 수리·전기 안전 조언이 아닙니다. 기기별 서비스 문서와 안전 지침을 반드시 확인하세요.
 
-Edge types: `has_symptom`, `indicates`, `requires_part`, `resolved_by`, `has_safety_note`, `compatible_with`.
+## 데이터 기여
 
-Every procedure requires a source citation. Edges may include a confidence from 0 to 1. Validation rejects duplicate IDs, missing endpoints, unknown types, invalid confidence values, and unsourced procedures.
+작고 출처가 분명한 변경과 테스트를 함께 제출해 주세요. 저작권이 있는 서비스 매뉴얼을 복사하거나 불확실한 호환성 정보를 추가하지 마세요.
 
-Diagnostic rankings are suggestions from contributed graph relationships, not professional repair or electrical-safety advice. Always surface safety nodes and verify device-specific service documentation.
+코드는 MIT, `data/` 예제 그래프는 CC-BY-4.0입니다.
 
-## Contributing data
-
-Add small, source-backed graph changes with tests. Do not copy proprietary service manuals or submit uncertain compatibility claims. Code is MIT licensed; example graph data under `data/` is CC-BY-4.0.
