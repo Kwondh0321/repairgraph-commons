@@ -12,9 +12,16 @@ license = { text = "MIT" }
 authors = [{ name = "Kwondh0321" }]
 keywords = ["repair", "right-to-repair", "knowledge-graph", "diagnostics", "open-data"]
 
+[project.optional-dependencies]
+dev = ["ruff==0.16.4"]
+
+[project.urls]
+Homepage = "https://github.com/Kwondh0321/repairgraph-commons"
+Repository = "https://github.com/Kwondh0321/repairgraph-commons.git"
+Issues = "https://github.com/Kwondh0321/repairgraph-commons/issues"
+
 [project.scripts]
 repairgraph = "repairgraph.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
-
